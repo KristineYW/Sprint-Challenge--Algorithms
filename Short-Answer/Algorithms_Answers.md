@@ -2,10 +2,12 @@
 
 ## Exercise I
 
-a) Runtime complexity: linear O(n).
+a) Runtime complexity: linear O(n)
+    Although the conditional for the while loop checks a against n^3, a itself increments by n*n (plus a) inside of the loop, so the runtime complexity of the entire while loop is closest to being linear.
 
 
-b) Runtime complexity: 
+b) Runtime complexity: linearithmic O(n * log_2 n)
+    This is a nested loop situation where the outer range includes 0-n and runs j = 1 "n" number of times, making the outer loop's big O value O(n). Since the nested while loop dictates that the value of j multiples on each loop, it is similar to a logarithmic function with log base 2, as the value of j always doubles and the inner while loop will run for a significantly shorter amount of iterations than n, making the inner big O notation O(log_2 n). The final big O notation is the mulplicative value of the inner and outer loops.  
 
 
 c) Runtime complexity: linear O(n)

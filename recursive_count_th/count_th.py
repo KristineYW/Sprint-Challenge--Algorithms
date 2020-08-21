@@ -19,6 +19,3 @@ def count_th(word):
     # If the first two letters of the input word is NOT the substring, return 0 and recurse through the rest of the word
     else: 
         return 0 + count_th(word[1:])
-
-    
-    pass

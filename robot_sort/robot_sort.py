@@ -96,7 +96,38 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
+        """
+        UNDERSTAND the problem:
+        A robot needs to sort the items in a given list. His abilities include to turn his light on or off, move left or right
+        (depending on whether he CAN move left or right depending on his position) and can compare and swap items.
+        His attributes include the list as a parameter, an item that is defaulted to None (he's not holding on initially),
+        position of 0 that we can use as a starting position inside the list, and a light with a default value of "OFF".
+        We are also given a "time" attribute which I think we can use to count the number of steps it takes to sort the list. 
+        To be honest, I'm not too sure how the robot's light should work or what its function in the algorithm should be, 
+        but perhaps we could use it to indicate when the robot is active in sorting the list (i.e. "ON" when the list still 
+        has unsorted values, and "OFF" when the list is completely sorted). 
+
+        Since our "swap_item" method looks like it can only work on 2 consecutive items, this is very similar to a BUBBLE-type
+        sorting solution. Very inefficient and definitely not ideal, but we work within our constraints. 
+
+        PLAN a solution:
+        1. Turn the light on by using "set_light_on" method.
+        2. Check if the position has any value. If not, then return None or 0.
+        3. If there was a value for the first position, check if we can move right by using method "can_move_right". 
+            a. If we cannot, then the list has only 1 item and is thereby already sorted.
+               The robot can turn his light off and return the 1-item list. 
+            b. If we can move right, then store the value of the first item in memory for later comparison.
+        4. If we can, move right by using "move_right" method. Check the value of the second item on the list. Compare that 
+           value with the value stored from the previous item by using method "compare_value".
+            a. If the value of the second item is greater than the value of the first item, repeat step 3 and move on to the
+               next position on the right. 
+            b. If the value of the second item is less than the value of the first item, perform "swap_item".
+        5. Repeat steps 3 & 4 until we hit the end of the list, or "can_move_right" is no longer true. 
+        6. Move all the way left with "move_left" until "can_move_left" is no longer true, indicating that we've reached the
+           the beginning of the list again.
+        7. Repeat steps 3-6 until the list is entirely sorted and "swap_item" is not triggered. 
+        8. Turn the light off. 
+        """
         pass
 
 
